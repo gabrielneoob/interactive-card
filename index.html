@@ -11,7 +11,55 @@
 </head>
 
 <body>
+  <div id="container-principal">
+    <section id="card-container">
+      <div id="card-front">
+        <div class="slogan">
+          <div class="slogan1"></div>
+          <div class="slogan2"></div>
+        </div>
+        <div id="card-numbers">
+          0000 0000 0000 0000
+        </div>
+        <div id="card-info">
+          <h3 class="card-name">GABRIEL NEOOB</h3>
+          <div class="exp-date"><span>00</span> / <span>00</span></div>
+        </div>
+      </div>
 
+      <div id="card-back">
+        <span>000</span>
+      </div>
+    </section>
+
+    <form id="card-form">
+      <div class="card-holder">
+        <label for="name">CARDHOLDER NAME</label>
+        <input type="text" id="name" placeholder="e.g. Gabriel Neoob" required>
+      </div>
+      <div class="card-number">
+        <label for="numbers">CARD NUMBER</label>
+        <input type="text" id="numbers" placeholder="e.g. 1234 5678 9123 0000" required>
+      </div>
+      <div class="date-cvc">
+        <div class="date-exp">
+          <label for="">EXP. DATE (MM/YY)</label>
+          <div class="date-exp-">
+            <input type="text" id="month" placeholder="MM" required>
+            <input type="text" id="year" placeholder="YY" required>
+          </div>
+        </div>
+
+        <div class="cvc">
+          <label for="cvc">CVC</label>
+          <input type="text" id="cvc" required placeholder="e.g. 123">
+        </div>
+
+
+      </div>
+      <button type="submit" id="submit-btn">Confirm</button>
+    </form>
+  </div>
 </body>
 
 </html>
