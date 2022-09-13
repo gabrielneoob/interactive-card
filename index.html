@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="./css/style.css">
   <title>Interactive Card Details</title>
   <script src="./script/script.js" defer></script>
+  <script src="./script/regex.js" defer></script>
 </head>
 
 <body>
+  <!-- <img src="./imgs/icon-complete.svg" alt=""> -->
   <div id="container-principal">
     <section id="card-container">
       <div id="card-front">
@@ -35,24 +37,25 @@
     <form id="card-form">
       <div class="card-holder">
         <label for="name">CARDHOLDER NAME</label>
-        <input type="text" id="name" placeholder="e.g. Gabriel Neoob" required>
+        <input type="text" id="name" placeholder="e.g. Gabriel Neoob" required maxlength="23">
       </div>
       <div class="card-number">
         <label for="numbers">CARD NUMBER</label>
-        <input type="text" id="numbers" placeholder="e.g. 1234 5678 9123 0000" required>
+        <input type="text" id="numbers" name="numbers" placeholder="e.g. 1234 5678 9123 0000" max="10" maxlength="19"
+          required pattern="([0-9]{4}\s){3}[0-9]{4}">
       </div>
       <div class="date-cvc">
         <div class="date-exp">
           <label for="">EXP. DATE (MM/YY)</label>
           <div class="date-exp-">
-            <input type="text" id="month" placeholder="MM" required>
-            <input type="text" id="year" placeholder="YY" required>
+            <input type="text" id="month" placeholder="MM" maxlength="2" minlength="2" required pattern="[0-1][0-9]">
+            <input type="text" id="year" placeholder="YY" maxlength="2" minlength="2" required>
           </div>
         </div>
 
         <div class="cvc">
           <label for="cvc">CVC</label>
-          <input type="text" id="cvc" required placeholder="e.g. 123">
+          <input type="text" id="cvc" required placeholder="e.g. 123" maxlength="3" minlength="3" pattern="\d{3}">
         </div>
 
 

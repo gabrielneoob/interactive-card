@@ -49,10 +49,15 @@ input {
   border: 1px solid var(--lightViolet);
   padding: 9px;
   border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 input::placeholder {
   color: var(--lightViolet);
+}
+
+input:focus {
+  border: 1px solid var(--g2)
 }
 
 /*Container*/
@@ -89,12 +94,13 @@ input::placeholder {
 
 #card-numbers {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  margin-left: 30px;
   align-items: flex-end;
   text-align: center;
   color: #fff;
   letter-spacing: 4px;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
 }
 
 #card-info {
@@ -145,11 +151,6 @@ input::placeholder {
   right: 0;
 }
 
-#card-form {
-  align-self: center;
-  margin: 0 0 0 40px;
-  /* justify-self: center; */
-}
 
 #card-back span {
   position: absolute;
@@ -160,10 +161,26 @@ input::placeholder {
   letter-spacing: 2px;
 }
 
-#card-form {
+#card-form,
+.completed-state {
+  align-self: center;
+  margin: 0 0 0 40px;
   display: grid;
   gap: 25px;
   max-width: 330px;
+}
+
+.completed-state {
+  justify-items: center;
+}
+
+.completed-state button {
+  width: 100%;
+}
+
+.completed-state p {
+  color: var(--veyDarkViolet);
+  font-size: 0.9rem;
 }
 
 .date-cvc {
@@ -193,7 +210,8 @@ input::placeholder {
   width: 100%;
 }
 
-#submit-btn {
+#submit-btn,
+.btn {
   background: var(--veyDarkViolet);
   color: #fff;
   outline: none;
@@ -201,4 +219,62 @@ input::placeholder {
   border-radius: 5px;
   padding: 15px;
   letter-spacing: 2px;
+  transition: 0.2s background linear;
+  cursor: pointer;
+}
+
+#submit-btn:hover {
+  background: var(--lightViolet);
+}
+
+@media(max-height: 780px) {
+  #card-front {
+    top: 129px;
+  }
+
+  #card-back {
+    bottom: 140px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  #card-front {
+    width: 379px;
+    right: 60px;
+  }
+
+  #card-back {
+    width: 379px;
+    right: 10px;
+  }
+
+  #card-numbers {
+    font-size: 1rem;
+  }
+
+  .card-name,
+  .exp-date {
+    font-size: 0.6rem !important;
+  }
+}
+
+.erro {
+  border-color: var(--red);
+}
+
+.hide {
+  display: none !important;
+}
+
+.erro-text {
+  display: none;
+  color: red;
+  font-size: 0.7rem;
+  flex-direction: column;
+  position: relative;
+}
+
+.ativar {
+  display: block !important;
 }
